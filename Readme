@@ -1,0 +1,19 @@
+# 🏥 InsureCare: Blockchain Medical Insurance DApp
+
+InsureCare is a decentralized application (DApp) built using Ethereum smart contracts and Web3.js that allows users to register medical insurance policies and file claims. The frontend is styled using TailwindCSS for a responsive, clean UI.
+
+## 🚀 Features
+
+- Connect MetaMask wallet
+- Register a medical insurance policy
+- File a claim using IPFS hash
+- View your policies and claims
+
+## 🛠 Tech Stack
+
+- **Frontend**: HTML, JavaScript, TailwindCSS
+- **Blockchain**: Solidity Smart Contract (deployed on Ethereum)
+- **Library**: Web3.js
+
+## 📁 Project Structure
+

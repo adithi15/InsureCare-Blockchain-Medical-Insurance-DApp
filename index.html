@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>InsureCare: Blockchain Medical Insurance</title>
+  <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+  <script src="app.js" defer></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gradient-to-br from-green-100 to-white min-h-screen p-6 font-sans">
+
+  <div class="max-w-5xl mx-auto bg-white shadow-2xl rounded-2xl p-8 border border-green-300">
+    <h1 class="text-3xl font-extrabold text-center text-green-700 mb-8">🏥 InsureCare: Blockchain Medical Insurance DApp</h1>
+
+    <div id="walletSection" class="flex flex-col items-center mb-6">
+      <button onclick="connectWallet()" class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-full transition">🔗 Connect Wallet</button>
+      <p id="walletAddress" class="mt-3 text-gray-600 text-sm"></p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+      <!-- Register Medical Policy -->
+      <div class="bg-green-50 p-6 rounded-xl shadow-md border border-green-200">
+        <h2 class="text-xl font-semibold text-green-800 mb-4">🩺 Register Medical Insurance</h2>
+        <input type="text" id="patientId" placeholder="Patient ID" class="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-400 mb-3">
+        <input type="number" id="coverageDays" placeholder="Coverage (Days)" class="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-400 mb-3">
+        <input type="number" id="medicalPremium" placeholder="Premium (ETH)" class="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-400 mb-4">
+        <button onclick="registerPolicy()"class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 w-full rounded-lg font-medium transition">📝 Register</button>
+      </div>
+
+      <!-- File Medical Claim -->
+      <div class="bg-blue-50 p-6 rounded-xl shadow-md border border-blue-200">
+        <h2 class="text-xl font-semibold text-blue-800 mb-4">💊 File Medical Claim</h2>
+        <input type="number" id="claimPolicyId" placeholder="Policy ID" class="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400 mb-3">
+        <input type="text" id="claimDocHash" placeholder="Medical Report IPFS Hash" class="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400 mb-4">
+        <button onclick="fileClaim()" class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 w-full rounded-lg font-medium transition">📤 Submit Claim</button>
+      </div>
+
+    </div>
+
+    <div class="mt-10">
+      <h2 class="text-2xl font-bold text-green-700 mb-4">📋 My Medical Policies</h2>
+      <ul id="myPolicies" class="space-y-3 text-gray-700 text-sm list-disc list-inside bg-green-50 p-4 rounded-lg shadow-sm border border-green-200"></ul>
+
+      <h2 class="text-2xl font-bold text-blue-700 mt-10 mb-4">📑 My Medical Claims</h2>
+      <ul id="myClaims" class="space-y-3 text-gray-700 text-sm list-disc list-inside bg-blue-50 p-4 rounded-lg shadow-sm border border-blue-200"></ul>
+    </div>
+  </div>
+
+</body>
+</html>
